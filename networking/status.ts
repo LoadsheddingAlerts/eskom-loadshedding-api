@@ -5,7 +5,7 @@ export class Status extends HTTPClient {
     public static async getStatusRaw(): Promise<LoadsheddingStageRaw> {
         try {
             const resp = await this.get('/GetStatus');
-            return resp.data;
+            return resp.json();
         } catch (e) {
             return LoadsheddingStageRaw.UNKNOWN;
         }
